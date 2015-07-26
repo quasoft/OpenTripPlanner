@@ -1,0 +1,1 @@
+java -Xmx768m -jar target\otp-0.18.0.jar --build ..\spirka.info\graph\vt

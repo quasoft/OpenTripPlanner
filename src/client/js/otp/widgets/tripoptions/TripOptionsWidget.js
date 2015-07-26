@@ -408,7 +408,6 @@ otp.widgets.tripoptions.TimeSelector =
 
 
 //** WheelChairSelector **//
-
 otp.widgets.tripoptions.WheelChairSelector =
     otp.Class(otp.widgets.tripoptions.TripOptionsWidgetControl, {
 
@@ -450,7 +449,6 @@ otp.widgets.tripoptions.WheelChairSelector =
         return (otp.util.Itin.includesTransit(mode)  || mode == "WALK") && !otp.util.Itin.includesBicycle(mode);
     }
 });
-
 
 //** ModeSelector **//
 

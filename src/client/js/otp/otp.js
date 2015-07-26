@@ -1,4 +1,4 @@
-/* Copyright (c) 2006-2012 by OpenLayers Contributors (see authors.txt for 
+/* Copyright (c) 2006-2012 by OpenLayers Contributors (see authors.txt for
  * full list of contributors). Published under the 2-clause BSD license.
  * See license.txt in the otp distribution or repository for the
  * full text of the license. */
@@ -19,7 +19,7 @@ otp.CLASS_NAME = "otp";
  * ns      - {String || Array} A string representing a namespace or an array of strings representing multiple namespaces.  E.g. "some.name.space".
  * context - {Object} Optional object to which additional names will be added.  Default is the window object.
  */
-otp.namespace = function(ns, context) 
+otp.namespace = function(ns, context)
 {
     ns = (typeof ns == 'string') ? [ns] : ns;
     context = context || window;
@@ -40,8 +40,8 @@ otp.namespace = function(ns, context)
 
 /**
  * Constructor: otp.Class
- * Base class used to construct all other classes. Includes support for 
- *     multiple inheritance. 
+ * Base class used to construct all other classes. Includes support for
+ *     multiple inheritance.
 
  * To create a new otp-style class, use the following syntax:
  * (code)
@@ -53,12 +53,12 @@ otp.namespace = function(ns, context)
  * (code)
  *     var MyClass = otp.Class(Class1, Class2, prototype);
  * (end)
- * 
+ *
  * Note that instanceof reflection will only reveal Class1 as superclass.
  *
  */
- 
- 
+
+
 otp.Class = function() {
     var len = arguments.length;
     var P = arguments[0];
@@ -80,9 +80,9 @@ otp.Class = function() {
 
 
 /**
- * set member variables in the destination object, as long as that same element is defined in the destination 
+ * set member variables in the destination object, as long as that same element is defined in the destination
  * (and the source has a value other than null).  It might overwrite an existing variable.
- * 
+ *
  * @param {Object} destination
  * @param {Object} source
  * @param {Object} getAll == true, we'll assign the value to the desination regarless if desination has an existing slot
@@ -125,7 +125,7 @@ otp.configure = function(destination, source, getAll) {
          */
 
         var sourceIsEvt = typeof window.Event == "function" && source instanceof window.Event;
-        if(!sourceIsEvt && source.hasOwnProperty && source.hasOwnProperty('toString')) 
+        if(!sourceIsEvt && source.hasOwnProperty && source.hasOwnProperty('toString'))
         {
             destination.toString = source.toString;
         }

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html dir="ltr" lang="en-US" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html dir="ltr" lang="en-US" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html dir="ltr" lang="en-US" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html dir="ltr" lang="en-US" class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="bg" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html dir="ltr" lang="bg" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html dir="ltr" lang="bg" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html dir="ltr" lang="bg" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="bg"> <!--<![endif]-->
 
 <head>
-<title>OpenTripPlanner</title>
+<title>Маршрут с градски транспорт в гр. Велико Търново</title>
 
 <!--  Mobile Viewport Fix -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -55,6 +55,7 @@
 
 <!-- otp-locales -->
 <script language="javascript" src="js/lib/i18next-1.7.3.min.js"></script>
+<script src="js/otp/locale/Bulgarian.js?v=1"></script>
 <script src="js/otp/locale/English.js?v=1"></script>
 <script src="js/otp/locale/French.js?v=1"></script>
 <script src="js/otp/locale/German.js?v=1"></script>
@@ -108,16 +109,16 @@
 <script type="text/javascript">
 	//Which modules needs which files
 	var modules = {
-		'otp.modules.bikeshare.BikeShareModule': 
+		'otp.modules.bikeshare.BikeShareModule':
 			[
 			'js/otp/modules/bikeshare/BikeShareModule.js?v=1',
 			'js/otp/modules/bikeshare/BikeStationsWidget.js?v=1'
 		],
-		'otp.modules.analyst.AnalystModule':
+		/*'otp.modules.analyst.AnalystModule':
 			[
 			'js/otp/modules/analyst/AnalystModule.js?v=1',
 			'js/otp/modules/analyst/AnalystLegendWidget.js?v=1',
-		],
+		],*/
 		'otp.modules.calltaker.CallTakerModule':
 			[
 			'js/lib/jspdf.min.js',
@@ -146,7 +147,7 @@
 			'js/otp/modules/fieldtrip/SaveFieldTripWidget.js?v=1',
 			'js/otp/modules/fieldtrip/SearchWidget.js?v=1'
 			]
-			
+
 	}
 	for (var moduleIndex = 0; moduleIndex < otp.config.modules.length; moduleIndex++) {
 		var curModuleClass = otp.config.modules[moduleIndex]["className"]

@@ -1,0 +1,1 @@
+java -Xmx1024m -jar target\otp-0.18.0.jar --router vt --graphs ..\spirka.info\graph\ --server --port 8000
