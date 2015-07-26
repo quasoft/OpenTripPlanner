@@ -478,7 +478,14 @@ otp.modules.planner.PlannerModule =
             // draw the polyline
             var polyline = new L.Polyline(otp.util.Geo.decodePolyline(leg.legGeometry.points));
             var weight = 8;
-            polyline.setStyle({ color : leg.routeColor, weight: weight});
+            var color = '';
+            if (leg.routeColor) {
+              routeColor = '#' + leg.routeColor;
+            }
+            else {
+              routeColor = this.getModeColor(leg.mode);
+            }
+            polyline.setStyle({ color : routeColor, weight: weight, opacity: 0.75});
             this.pathLayer.addLayer(polyline);
             polyline.leg = leg;
             polyline.bindPopup("("+leg.routeShortName+") "+leg.routeLongName);

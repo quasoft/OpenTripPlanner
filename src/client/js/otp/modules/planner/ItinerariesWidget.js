@@ -296,15 +296,21 @@ otp.widgets.ItinerariesWidget =
             //div.append('<div class="otp-itinsAccord-header-segment" style="width: '+widthPx+'px; left: '+leftPx+'px; background: '+this.getModeColor(leg.mode)+' url(images/mode/'+leg.mode.toLowerCase()+'.png) center no-repeat;"></div>');
 
             var showRouteLabel = widthPx > 40 && otp.util.Itin.isTransit(leg.mode) && leg.routeShortName && leg.routeShortName.length <= 6;
+            if (leg.routeColor) {
+              routeColor = '#' + leg.routeColor;
+            }
+            else {
+              routeColor = this.getModeColor(leg.mode);
+            }
             var segment = $('<div class="otp-itinsAccord-header-segment" />')
             .css({
                 width: widthPx,
                 left: leftPx,
                 //background: this.getModeColor(leg.mode)
-                background: this.getModeColor(leg.mode)+' url('+otp.config.resourcePath+'images/mode/'+leg.mode.toLowerCase()+'.png) center no-repeat'
+                background: routeColor+' url('+otp.config.resourcePath+'images/mode/'+leg.mode.toLowerCase()+'.png) 3px 50% no-repeat'
             })
             .appendTo(div);
-            if(showRouteLabel) segment.append('<div style="margin-left:'+(widthPx/2+9)+'px;">'+leg.routeShortName+'</div>');
+            if(showRouteLabel) segment.append('<div title="'+leg.routeLongName+'" style="margin-left:16px;">'+leg.routeShortName+'</div>');
 
         }
 
