@@ -112,7 +112,7 @@ otp.core.Webapp = otp.Class({
 
         if(otp.config.showLogo) {
           //$('<div id="logo"><a href="'+otp.config.siteUrl+'"><img src="'+otp.config.logoGraphic+'" style="height:100%"></a></div>').appendTo('#branding');
-            $(Mustache.render(otp.templates.img, { 
+            $(Mustache.render(otp.templates.img, {
                 src : otp.config.logoGraphic,
                 style : 'height:100%',
                 wrapLink : true,
@@ -186,11 +186,13 @@ otp.core.Webapp = otp.Class({
 
         this.widgetManagerMenu = new otp.core.WidgetManagerMenu(this);
 
+        /*
         var widgetManagerIcon = $('<div id="otp-widgetManager"></div>')
         .appendTo('#branding')
         .click(function(event) {
             this_.widgetManagerMenu.show(); // showWidgetManagerMenu();
         });
+        */
 
 
         // create the info widgets and links along header bar
