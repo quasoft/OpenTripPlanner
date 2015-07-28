@@ -6,7 +6,7 @@
   top: 60px;
   left: 10px;
   width: 300px;
-  height: 300px;
+  height: 350px;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -17,7 +17,13 @@
 
 @media only screen and (min-height: 768px) {
   .otp-defaultItinsWidget {
-    hieght: 350px;
+    height: 400px;
+  }
+}
+
+@media only screen and (min-height: 1024px) {
+  .otp-defaultItinsWidget {
+    height: 500px;
   }
 }
 
@@ -46,7 +52,7 @@
     font-weight: bold;
     font-size: 1.5em;
     height: 1.2em;
-    padding-top:.1em  
+    padding-top:.1em
 }
 
 .otp-itinsAccord-header-icons {
@@ -90,7 +96,7 @@
     text-shadow: none;
     text-align: center;
     background: black;
-    padding-top: 1px;    
+    padding-top: 1px;
 }
 
 .otp-itinsAccord-header-segment {
@@ -168,7 +174,7 @@
 }
 
 .otp-itinsButtonRow {
-    margin-top: .5em;  
+    margin-top: .5em;
     font-size: .9em;
     text-align: center;
 }
@@ -318,7 +324,7 @@
     float: right;
     text-align: center;
     color: gray;
-    
+
 }
 
 .otp-itin-step-text {
