@@ -122,6 +122,8 @@
     "Walk to the %(bike_share_name)s dock.": "Hodite do postaje podjetja %(bike_share_name)s.",
     "Walk from the %(bike_share_name)s dock to your destination.": "Hodite od postaje podjetja %(bike_share_name)s do vašega cilja.",
     "Your walk route": "Pot peš",
+    " km": "",
+    " m": "",
     "north": "sever",
     "northeast": "severovzhod",
     "east": "vzhod",

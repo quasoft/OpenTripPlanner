@@ -110,6 +110,8 @@
     "Walk to the %(bike_share_name)s dock.": "Marcher jusqu'à l'emplacement %(bike_share_name)s.",
     "Walk from the %(bike_share_name)s dock to your destination.": "Marcher de l'emplacement %(bike_share_name)s jusqu'à votre destination",
     "Your walk route": "Votre itinéraire à pieds",
+    " km": "",
+    " m": "",
     "north": "nord",
     "northeast": "nord-est",
     "east": "est",
