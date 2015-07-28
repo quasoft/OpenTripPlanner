@@ -118,7 +118,7 @@ otp.config = {
     logoGraphic         : 'images/otp_logo_darkbg_40px.png',
     // bikeshareName    : "",
     //Enable this if you want to show frontend language chooser
-    showLanguageChooser : true,
+    showLanguageChooser : false,
 
     showLogo            : true,
     showTitle           : true,
@@ -209,7 +209,7 @@ var options = {
         /*postProcess: 'add_nekaj', //Adds | around every string that is translated*/
         /*shortcutFunction: 'sprintf',*/
         /*postProcess: 'sprintf',*/
-	debug: true,
+	debug: false,
 	getAsync: false, //TODO: make async
 	fallbackOnEmpty: true,
 };
