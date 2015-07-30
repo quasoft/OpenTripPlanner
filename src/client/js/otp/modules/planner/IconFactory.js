@@ -2,14 +2,14 @@
    modify it under the terms of the GNU Lesser General Public License
    as published by the Free Software Foundation, either version 3 of
    the License, or (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 otp.namespace("otp.modules.planner");
@@ -20,9 +20,9 @@ var StartFlagIcon = L.Icon.extend({
     options: {
         iconUrl: resourcePath + 'images/marker-flag-start-shadowed.png',
         shadowUrl: null,
-        iconSize: new L.Point(48, 49),
-        iconAnchor: new L.Point(46, 42),
-        popupAnchor: new L.Point(0, -16)
+        iconSize: new L.Point(22, 40),
+        iconAnchor: new L.Point(11, 40),
+        popupAnchor: new L.Point(0, -25)
     }
 });
 
@@ -30,9 +30,9 @@ var EndFlagIcon = L.Icon.extend({
     options: {
         iconUrl: resourcePath + 'images/marker-flag-end-shadowed.png',
         shadowUrl: null,
-        iconSize: new L.Point(48, 49),
-        iconAnchor: new L.Point(46, 42),
-        popupAnchor: new L.Point(0, -16)
+        iconSize: new L.Point(22, 40),
+        iconAnchor: new L.Point(11, 40),
+        popupAnchor: new L.Point(0, -25)
     }
 });
 
@@ -243,17 +243,17 @@ var LargeIcon100Pct = L.Icon.extend({
 
 
 otp.modules.planner.IconFactory = otp.Class({
-    
+
     startFlag : new StartFlagIcon(),
     endFlag : new EndFlagIcon(),
-    
+
     startBike : new StartBikeIcon(),
     endBike : new EndBikeIcon(),
-    
-    smallBlue : new SmallBlueIcon(),    
+
+    smallBlue : new SmallBlueIcon(),
     mediumBlue : new MediumBlueIcon(),
     blueNub : new BlueNubIcon(),
-    
+
     small0 : new SmallIcon0Pct(),
     small25 : new SmallIcon25Pct(),
     small50 : new SmallIcon50Pct(),
@@ -271,14 +271,14 @@ otp.modules.planner.IconFactory = otp.Class({
     large50 : new LargeIcon50Pct(),
     large75 : new LargeIcon75Pct(),
     large100 : new LargeIcon100Pct(),
-    
+
     lowerCutoff : 0.2,
     upperCutoff : 0.8,
-    
-    
+
+
     initialize : function() {
     },
-       
+
     getSmall : function(station) {
         var pct =  station.bikesAvailable / (station.bikesAvailable + station.spacesAvailable);
         if(pct == 0) return this.small0;
@@ -286,7 +286,7 @@ otp.modules.planner.IconFactory = otp.Class({
         if(pct <= this.lowerCutoff) return this.small25;
         if(pct >= this.upperCutoff) return this.small75;
         return this.small50;
-    },   
+    },
 
     getMedium : function(station) {
         var pct =  station.bikesAvailable / (station.bikesAvailable + station.spacesAvailable);
@@ -295,7 +295,7 @@ otp.modules.planner.IconFactory = otp.Class({
         if(pct <= this.lowerCutoff) return this.medium25;
         if(pct >= this.upperCutoff) return this.medium75;
         return this.medium50;
-    },   
+    },
 
     getLarge : function(station) {
         var pct =  station.bikesAvailable / (station.bikesAvailable + station.spacesAvailable);
@@ -305,9 +305,9 @@ otp.modules.planner.IconFactory = otp.Class({
         if(pct >= this.upperCutoff) return this.large75;
         return this.large50;
     },
-    
+
     // mode bubble icons
-    
+
     getModeBubble : function(quadrant, time, mode, isOrigin, highlight) {
         quadrant = quadrant.toLowerCase();
         mode = mode.toLowerCase();
@@ -321,7 +321,7 @@ otp.modules.planner.IconFactory = otp.Class({
         //otherwise)
         var time_format = (otp.config.locale.time.time_format.slice(-1) === 'a') ? otp.config.locale.time.time_format.slice(0, -1) : otp.config.locale.time.time_format;
         html +=  otp.util.Time.formatItinTime(time, time_format);
-        
+
         if(quadrant === 'nw') anchor = [32,44];
         if(quadrant === 'ne') anchor = [0,44];
         if(quadrant === 'sw') anchor = [32,0];
@@ -331,9 +331,9 @@ otp.modules.planner.IconFactory = otp.Class({
             className: 'otp-itin-div-icon '+'otp-itin-div-icon-'+quadrant+(highlight ? "-highlight" : ""),
             iconSize: [32,44],
             iconAnchor: anchor,
-            html: html 
+            html: html
         });
     },
-                
+
     CLASS_NAME : "otp.modules.planner.IconFactory"
-});    
+});
