@@ -1,4 +1,4 @@
-/* This program is free software: you can redistribute it and/or
+﻿/* This program is free software: you can redistribute it and/or
    modify it under the terms of the GNU Lesser General Public License
    as published by the Free Software Foundation, either version 3 of
    the License, or (at your option) any later version.
@@ -27,7 +27,7 @@ otp.widgets.ItinerariesWidget =
 
     // set to true by next/previous/etc. to indicate to only refresh the currently active itinerary
     refreshActiveOnly : false,
-    showButtonRow : true,
+    showButtonRow : false,
     showItineraryLink : true,
     showPrintLink : true,
     showEmailLink : true,
@@ -295,7 +295,7 @@ otp.widgets.ItinerariesWidget =
 
             //div.append('<div class="otp-itinsAccord-header-segment" style="width: '+widthPx+'px; left: '+leftPx+'px; background: '+this.getModeColor(leg.mode)+' url(images/mode/'+leg.mode.toLowerCase()+'.png) center no-repeat;"></div>');
 
-            var showRouteLabel = widthPx > 40 && otp.util.Itin.isTransit(leg.mode) && leg.routeShortName && leg.routeShortName.length <= 6;
+            var showRouteLabel = widthPx > 20 && otp.util.Itin.isTransit(leg.mode) && leg.routeShortName && leg.routeShortName.length <= 6;
             if (leg.routeColor) {
               routeColor = '#' + leg.routeColor;
             }
@@ -375,10 +375,10 @@ otp.widgets.ItinerariesWidget =
                 }
             }
             else if(leg.agencyId !== null) {
-                headerHtml += ": "+leg.agencyId+", ";
-                if(leg.route !== leg.routeLongName) {
+                headerHtml += ": ";
+                /*if(leg.route !== leg.routeLongName) {
                     headerHtml += "("+leg.route+") ";
-                }
+                }*/
                 if (leg.routeLongName) {
                     headerHtml += leg.routeLongName;
                 }
@@ -444,7 +444,7 @@ otp.widgets.ItinerariesWidget =
 
         // add start and end time rows and the main leg accordion display
         //TRANSLATORS: Start: Time and date (Shown before path itinerary)
-        itinDiv.append("<div class='otp-itinStartRow'><b>" + pgettext('template', "Start") + "</b>: "+itin.getStartTimeStr()+"</div>");
+        itinDiv.append("<div class='otp-itinStartRow'><b>" + pgettext('template', "Start") + "</b>: "+itin.getStartTimeStr()+", <b>" + _tr("Time") + "</b>: " + itin.getDurationStr() + "</div>");
         itinDiv.append(itinAccord);
         //TRANSLATORS: End: Time and date (Shown after path itinerary)
         itinDiv.append("<div class='otp-itinEndRow'><b>" + _tr("End") + "</b>: "+itin.getEndTimeStr()+"</div>");
