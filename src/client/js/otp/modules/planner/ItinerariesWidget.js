@@ -569,8 +569,9 @@ otp.widgets.ItinerariesWidget =
             if( typeof leg.from.stopCode != 'undefined' ) {
                 stopHtml += _tr("Stop") + ' #'+leg.from.stopCode+ ' ';
             }
-            stopHtml += '[<a href="#">' + _tr("Stop Viewer") +'</a>]</div>';
+            stopHtml += '</div>';
 
+            /*
             $(stopHtml)
             .appendTo(legDiv)
             .click(function(evt) {
@@ -583,6 +584,7 @@ otp.widgets.ItinerariesWidget =
                 this_.module.stopViewerWidget.setStop(leg.from.stopId, leg.from.name);
                 this_.module.stopViewerWidget.bringToFront();
             });
+            */
 
 
             $('<div class="otp-itin-leg-buffer"></div>').appendTo(legDiv);
