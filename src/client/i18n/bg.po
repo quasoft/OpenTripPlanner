@@ -8,31 +8,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenTripPlanner VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-07-28 09:01+0300\n"
-"PO-Revision-Date: 2015-07-28 09:01+0300\n"
+"POT-Creation-Date: 2015-07-30 19:09+0300\n"
+"PO-Revision-Date: 2015-07-30 19:10+0300\n"
 "Last-Translator: \n"
 "Language-Team: QuaSoft <info@quasoft.net>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 1.3\n"
+"X-Generator: Poedit 1.8.3\n"
 
 #. Travel by: mode of transport (Used in selection in Travel
 #. Options widgets)
-#: src/client/js/otp/config.js:288
+#: src/client/js/otp/config.js:301
 msgid "Transit"
 msgstr "Градски транспорт"
 
 #. Travel by: mode of transport (Used in selection in Travel
 #. Options widgets)
-#: src/client/js/otp/config.js:305
+#: src/client/js/otp/config.js:318
 msgid "Walk Only"
 msgstr "Пеша"
 
 #. Travel by: mode of transport (Used in selection in Travel
 #. Options widgets)
-#: src/client/js/otp/config.js:308
+#: src/client/js/otp/config.js:321
 msgid "Drive Only"
 msgstr "Автомобил"
 
@@ -61,32 +63,37 @@ msgstr "Покажи всичко"
 
 #. widget title
 #: src/client/js/otp/layers/IntermediateStopsLayer.js:72
-#: src/client/js/otp/layers/StopsLayer.js:70
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:576
+#: src/client/js/otp/layers/StopsLayer.js:120
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:572
+#: src/client/js/otp/modules/planner/PlannerModule.js:614
 #: src/client/js/otp/widgets/transit/StopViewerWidget.js:31
 msgid "Stop Viewer"
 msgstr "Разписание на спирката"
 
 #. Plan Trip [From Stop| To Stop] Used in stoplayer popup
 #: src/client/js/otp/layers/IntermediateStopsLayer.js:74
-#: src/client/js/otp/layers/StopsLayer.js:72
+#: src/client/js/otp/layers/StopsLayer.js:122
+#: src/client/js/otp/modules/planner/PlannerModule.js:616
 msgid "Plan Trip"
-msgstr "Намиране на маршрут"
+msgstr "Намери маршрут"
 
 #. Plan Trip [From Stop| To Stop] Used in stoplayer popup
 #: src/client/js/otp/layers/IntermediateStopsLayer.js:76
-#: src/client/js/otp/layers/StopsLayer.js:74
+#: src/client/js/otp/layers/StopsLayer.js:124
+#: src/client/js/otp/modules/planner/PlannerModule.js:618
 msgid "From Stop"
 msgstr "От тук"
 
 #. Plan Trip [From Stop| To Stop] Used in stoplayer popup
 #: src/client/js/otp/layers/IntermediateStopsLayer.js:78
-#: src/client/js/otp/layers/StopsLayer.js:76
+#: src/client/js/otp/layers/StopsLayer.js:126
+#: src/client/js/otp/modules/planner/PlannerModule.js:620
 msgid "To Stop"
 msgstr "До тук"
 
 #: src/client/js/otp/layers/IntermediateStopsLayer.js:79
-#: src/client/js/otp/layers/StopsLayer.js:77
+#: src/client/js/otp/layers/StopsLayer.js:127
+#: src/client/js/otp/modules/planner/PlannerModule.js:621
 msgid "Routes Serving Stop"
 msgstr "Маршрути обслужващи спирката"
 
@@ -118,7 +125,7 @@ msgstr "Bike Share Planner"
 #: src/client/js/otp/modules/bikeshare/BikeShareModule.js:110
 #: src/client/js/otp/modules/multimodal/MultimodalPlannerModule.js:44
 msgid "Trip Options"
-msgstr "Препочитания"
+msgstr "Търсене на маршрут"
 
 #. Popup title station from where bike is picked
 #. up
@@ -224,24 +231,34 @@ msgstr[1] "Намерени %d маршрута"
 msgid "Link to search"
 msgstr "Link to search"
 
+#. button to first itinerary
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:171
+msgid "First"
+msgstr "Първи"
+
 #. button to previous itinerary
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:188
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:186
 msgid "Previous"
 msgstr "Предишен рейс"
 
 #. button to next itinerary
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:204
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:202
 msgid "Next"
 msgstr "Следващ рейс"
 
+#. button to last itinerary
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:218
+msgid "Last"
+msgstr "Последен"
+
 #. Used when passengers can stay on vehicle. Continues
 #. as [agency] route name
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:356
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:352
 msgid "CONTINUES AS"
 msgstr "Продължава като"
 
 #. Something in Public transport is x minutes late
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:364
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:360
 #, python-format
 msgid "%d min late"
 msgid_plural "%d mins late"
@@ -249,7 +266,7 @@ msgstr[0] "закъснява с %d мин."
 msgstr[1] "закъснява с %d мин."
 
 #. Something in Public transport is x minutes early
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:367
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:363
 #, python-format
 msgid "%d min early"
 msgid_plural "%d mins early"
@@ -257,12 +274,12 @@ msgstr[0] "подранява с %d мин."
 msgstr[1] "подранява с %d мин."
 
 #. Something in Public transport is on time
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:370
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:366
 msgid "on time"
 msgstr "на време"
 
 #. [distance] to [name of destination]
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:375
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:371
 #: src/client/js/otp/modules/planner/Itinerary.js:251
 #: src/client/js/otp/modules/planner/Itinerary.js:335
 msgctxt "direction"
@@ -272,104 +289,105 @@ msgstr " до "
 #. used in sentence like: <Long name of public transport route> "to" <Public
 #. transport
 #. headsign>. Used in showing itinerary
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:393
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:389
 #: src/client/js/otp/modules/planner/Itinerary.js:247
 #: src/client/js/otp/modules/planner/Itinerary.js:332
-#: src/client/js/otp/widgets/transit/StopViewerWidget.js:123
+#: src/client/js/otp/widgets/transit/StopViewerWidget.js:125
 msgctxt "bus_direction"
 msgid " to "
 msgstr " в посока "
 
 #. Shown as alert text before showing itinerary.
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:442
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:438
 msgid "Total walk distance for this trip exceeds specified maximum"
 msgstr "Общото разстояние за ходене превишава зададения максимум"
 
 #. Start: Time and date (Shown before path itinerary)
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:451
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:447
 #: src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js:184
 msgctxt "template"
 msgid "Start"
 msgstr "Заминаване"
 
+#. Time: minutes How long is this trip
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:447
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:459
+#: src/client/js/otp/modules/planner/Itinerary.js:300
+msgid "Time"
+msgstr "Пътуване"
+
 #. End: Time and date (Shown after path itinerary)
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:454
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:450
 #: src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js:185
 msgid "End"
 msgstr "Пристигане"
 
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:459
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:455
 #: src/client/js/otp/modules/planner/Itinerary.js:298
 msgid "Trip Summary"
 msgstr "Информация за маршрута"
 
 #. Travel: hour date on which this trip is made
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:461
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:457
 #: src/client/js/otp/modules/planner/Itinerary.js:299
 msgid "Travel"
 msgstr "Заминаване в"
 
-#. Time: minutes How long is this trip
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:463
-#: src/client/js/otp/modules/planner/Itinerary.js:300
-msgid "Time"
-msgstr "Пътуване"
-
 #. Total foot distance for trip
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:471
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:467
 #: src/client/js/otp/modules/planner/Itinerary.js:304
 msgid "Total Walk"
 msgstr "Пеша"
 
 #. Total distance on a bike for this trip
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:478
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:474
 msgid "Total Bike"
 msgstr "Total Bike"
 
 #. Total distance in a car for this trip
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:485
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:481
 #, fuzzy
 msgid "Total drive"
 msgstr "Total Bike"
 
 #. how many public transit transfers in a trip
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:491
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:487
 #: src/client/js/otp/modules/planner/Itinerary.js:302
 msgid "Transfers"
 msgstr "Прекачвания"
 
 #. cost of trip
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:497
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:493
 #: src/client/js/otp/modules/planner/Itinerary.js:307
 msgid "Fare"
 msgstr "Цена"
 
 #. Valid date time; When is this trip correct
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:505
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:501
 msgid "Valid"
 msgstr "Актуално към"
 
 #. Links to this itinerary
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:510
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:506
 msgid "Link to Itinerary"
 msgstr "Връзка"
 
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:515
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:511
 msgid "Print"
 msgstr "Разпечатай"
 
 #. Default subject when sending trip to email
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:525
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:521
 msgid "Your Trip"
 msgstr "Маршрут с градски транспорт в гр. Велико Търново"
 
 #. Link to send trip by email
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:528
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:524
 msgid "Email"
 msgstr "Изпрати по E-mail"
 
 #. public transport drives every N minutes
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:548
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:544
 #, python-format
 msgid "every %d min"
 msgid_plural "every %d mins"
@@ -377,51 +395,52 @@ msgstr[0] "всяка %d мин."
 msgstr[1] "всеки %d мин."
 
 #. Depart station / Board at station in itinerary
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:554
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:550
 msgctxt "itinerary"
 msgid "Depart"
 msgstr "Заминава"
 
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:554
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:550
 msgid "<b>Board</b> at "
 msgstr "<b>Качете се</b> на спирка "
 
 #. Public transport <Stop> (stop name)
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:574
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:570
+#: src/client/js/otp/modules/planner/PlannerModule.js:492
 #: src/client/js/otp/widgets/transit/StopViewerWidget.js:92
 msgid "Stop"
 msgstr "Спирка"
 
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:598
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:594
 #: src/client/js/otp/modules/planner/Itinerary.js:261
 #: src/client/js/otp/modules/planner/Itinerary.js:344
 msgid "Time in transit"
 msgstr "Време на пътуване"
 
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:600
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:596
 #: src/client/js/otp/widgets/transit/TripViewerWidget.js:35
 msgid "Trip Viewer"
 msgstr "Преглед на рейса"
 
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:658
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:655
 msgid "late as"
 msgstr "late as"
 
 #. Stay on board/Alight [at stop name]
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:664
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:661
 msgid "Stay on board"
 msgstr "Останете в автобуса"
 
 #. Alight Public transit route name (agency name
 #. Stop ID ) end time
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:664
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:661
 #: src/client/js/otp/modules/planner/Itinerary.js:264
 #: src/client/js/otp/modules/planner/Itinerary.js:347
 msgid "Alight"
 msgstr "Слезте"
 
 #. [Stay on board/Alight] at [stop name]
-#: src/client/js/otp/modules/planner/ItinerariesWidget.js:666
+#: src/client/js/otp/modules/planner/ItinerariesWidget.js:663
 msgid "at"
 msgstr "на спирка"
 
@@ -452,7 +471,7 @@ msgstr "Качване на спирка"
 #: src/client/js/otp/modules/planner/Itinerary.js:347
 #, python-format
 msgid "(%(agency_id)s Stop ID #%(stop_id)s),"
-msgstr "в "
+msgstr "(%(agency_id)s Stop ID #%(stop_id)s),"
 
 #. End: location at [time date] (Used in print itinerary
 #. when do you come at a destination)
@@ -477,19 +496,17 @@ msgstr ""
 #: src/client/js/otp/modules/planner/PlannerModule.js:98
 #: src/client/js/otp/modules/planner/PlannerModule.js:99
 msgid ""
-"We're sorry. The trip planner is temporarily unavailable. Please try "
-"again later."
-msgstr ""
-"We're sorry. The trip planner is temporarily unavailable. Please try "
-"again later."
+"We're sorry. The trip planner is temporarily unavailable. Please try again "
+"later."
+msgstr "Системата е временно недостъпна. Опитайте отново по-късно."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:100
 msgid ""
-"Trip is not possible.  You might be trying to plan a trip outside the map"
-" data boundary."
+"Trip is not possible.  You might be trying to plan a trip outside the map "
+"data boundary."
 msgstr ""
-"Trip is not possible.  You might be trying to plan a trip outside the map"
-" data boundary."
+"Не може да бъде намерен маршрут. Вероятно сте избрали начална или крайна "
+"точка извън границите на града или в район без улици."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:101
 msgid ""
@@ -497,45 +514,50 @@ msgid ""
 "accessible (for instance), you might be starting on a residential street "
 "connected only to a highway)."
 msgstr ""
-"Trip is not possible.  Your start or end point might not be safely "
-"accessible (for instance), you might be starting on a residential street "
-"connected only to a highway)."
+"Не може да бъде намерен маршрут. Системата не може да открие път до "
+"началната или крайната точка, която сте избрали. Преместете началната или "
+"крайната точка по-близо до улица или пешеходна пътека."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:102
 msgid ""
-"No transit times available. The date may be past or too far in the future"
-" or there may not be transit service for your trip at the time you chose."
+"No transit times available. The date may be past or too far in the future or "
+"there may not be transit service for your trip at the time you chose."
 msgstr ""
-"No transit times available. The date may be past or too far in the future"
-" or there may not be transit service for your trip at the time you chose."
+"Не е открита транспортна линия, която да работи в избраното от Вас време. "
+"Вероятно зададеното време за заминаване или пристигане е извън работното "
+"време на превозвачите."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:103
 msgid ""
-"The trip planner is taking way too long to process your request. Please "
-"try again later."
+"The trip planner is taking way too long to process your request. Please try "
+"again later."
 msgstr ""
-"The trip planner is taking way too long to process your request. Please "
-"try again later."
+"Прекратяване на търсенето на маршрут поради изтекло време. Опитайте отново "
+"по-късно."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:104
-msgid "The request has errors that the server is not willing or able to process."
-msgstr "The request has errors that the server is not willing or able to process."
+msgid ""
+"The request has errors that the server is not willing or able to process."
+msgstr "Заявката съдържа данни, които не могат да бъдат обработени от сървъра."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:105
 msgid "Origin is unknown. Can you be a bit more descriptive?"
-msgstr "Origin is unknown. Can you be a bit more descriptive?"
+msgstr ""
+"Не може да бъде открито местоположението на началната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:106
 msgid "Destination is unknown.  Can you be a bit more descriptive?"
-msgstr "Destination is unknown.  Can you be a bit more descriptive?"
+msgstr ""
+"Не може да бъде открито местоположението на крайната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:107
 msgid ""
-"Both origin and destination are unknown. Can you be a bit more "
-"descriptive?"
+"Both origin and destination are unknown. Can you be a bit more descriptive?"
 msgstr ""
-"Both origin and destination are unknown. Can you be a bit more "
-"descriptive?"
+"Не може да бъде открито местоположението на началната и крайната точка по "
+"въведения текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:108
 msgid "Both origin and destination are not wheelchair accessible"
@@ -543,31 +565,31 @@ msgstr "Both origin and destination are not wheelchair accessible"
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:109
 msgid "Origin is within a trivial distance of the destination."
-msgstr "Origin is within a trivial distance of the destination."
+msgstr "Крайната точка е твърде близо до началната точка."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:111
 msgid ""
-"The trip planner is unsure of the location you want to start from. Please"
-" select from the following options, or be more specific."
+"The trip planner is unsure of the location you want to start from. Please "
+"select from the following options, or be more specific."
 msgstr ""
-"The trip planner is unsure of the location you want to start from. Please"
-" select from the following options, or be more specific."
+"Не може да бъде открито местоположението на началната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:112
 msgid ""
 "The trip planner is unsure of the destination you want to go to. Please "
 "select from the following options, or be more specific."
 msgstr ""
-"The trip planner is unsure of the destination you want to go to. Please "
-"select from the following options, or be more specific."
+"Не може да бъде открито местоположението на крайната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:113
 msgid ""
-"Both origin and destination are ambiguous. Please select from the "
-"following options, or be more specific."
+"Both origin and destination are ambiguous. Please select from the following "
+"options, or be more specific."
 msgstr ""
-"Both origin and destination are ambiguous. Please select from the "
-"following options, or be more specific."
+"Не може да бъде открито местоположението на началната и крайната точка по "
+"въведения текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:115
 msgid ""
@@ -595,11 +617,11 @@ msgstr ""
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:118
 msgid ""
-"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, "
-"and triangleTimeFactor must be set"
+"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, and "
+"triangleTimeFactor must be set"
 msgstr ""
-"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, "
-"and triangleTimeFactor must be set"
+"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, and "
+"triangleTimeFactor must be set"
 
 #. Context menu
 #: src/client/js/otp/modules/planner/PlannerModule.js:194
@@ -634,34 +656,40 @@ msgid "No Trip Found"
 msgstr "Не е открит маршрут"
 
 #. shown when clicked on route on map
-#: src/client/js/otp/modules/planner/PlannerModule.js:525
+#: src/client/js/otp/modules/planner/PlannerModule.js:583
 #, python-format
 msgid "Your %(bike_share_name)s route"
 msgstr "Your %(bike_share_name)s route"
 
 #. Text which is shown when clicking bike route
 #. in a map
-#: src/client/js/otp/modules/planner/PlannerModule.js:531
+#: src/client/js/otp/modules/planner/PlannerModule.js:589
 msgid "Your bike route"
 msgstr "Your bike route"
 
 #. Shown in map when clicking on a route
-#: src/client/js/otp/modules/planner/PlannerModule.js:539
+#: src/client/js/otp/modules/planner/PlannerModule.js:597
 #, python-format
 msgid "Walk to the %(bike_share_name)s dock."
 msgstr "Walk to the %(bike_share_name)s dock."
 
 #. Shown in map when clicking on a route
-#: src/client/js/otp/modules/planner/PlannerModule.js:543
+#: src/client/js/otp/modules/planner/PlannerModule.js:601
 #, python-format
 msgid "Walk from the %(bike_share_name)s dock to your destination."
 msgstr "Walk from the %(bike_share_name)s dock to your destination."
 
 #. Text which is shown when clicking walking
 #. route in a map
-#: src/client/js/otp/modules/planner/PlannerModule.js:549
+#: src/client/js/otp/modules/planner/PlannerModule.js:607
 msgid "Your walk route"
 msgstr "Разстояние, което трябва да изминете пеша"
+
+#: src/client/js/otp/modules/planner/PlannerModule.js:669
+#: src/client/js/otp/modules/planner/PlannerModule.js:682
+#, python-format
+msgid "Board %(routeName)s at %(stopName)s"
+msgstr "Качете се на %(routeName)s от спирка '%(stopName)s'"
 
 #. Abbreviation for kilometers (distance)
 #: src/client/js/otp/util/Geo.js:99 src/client/js/otp/util/Geo.js:103
@@ -820,11 +848,11 @@ msgstr "Станция за наемане на велосипеди"
 #: src/client/js/otp/util/Itin.js:252
 #, python-format
 msgid ""
-"Take roundabout <b>counterclockwise</b> to <b>%(ordinal_exit_number)s</b>"
-" exit on <b>%(street_name)s</b>"
+"Take roundabout <b>counterclockwise</b> to <b>%(ordinal_exit_number)s</b> "
+"exit on <b>%(street_name)s</b>"
 msgstr ""
-"Влезте в кръговото и излезте от <b>%(ordinal_exit_number)s</b> изход по "
-"<b>%(street_name)s</b>"
+"Влезте в кръговото и излезте от <b>%(ordinal_exit_number)s</b> изход по <b>"
+"%(street_name)s</b>"
 
 #: src/client/js/otp/util/Itin.js:254
 #, python-format
@@ -838,17 +866,16 @@ msgstr ""
 #: src/client/js/otp/util/Itin.js:258
 #, python-format
 msgid ""
-"Take roundabout <b>clockwise</b> to <b>%(ordinal_exit_number)s</b> exit "
-"on <b>%(street_name)s</b>"
+"Take roundabout <b>clockwise</b> to <b>%(ordinal_exit_number)s</b> exit on "
+"<b>%(street_name)s</b>"
 msgstr ""
-"Влезте в кръговото по часовниковата стрелка и излезте от "
-"<b>%(ordinal_exit_number)s</b> изход по <b>%(street_name)s</b>"
+"Влезте в кръговото по часовниковата стрелка и излезте от <b>"
+"%(ordinal_exit_number)s</b> изход по <b>%(street_name)s</b>"
 
 #: src/client/js/otp/util/Itin.js:260
 #, python-format
 msgid ""
-"Take roundabout clockwise to %(ordinal_exit_number)s exit on "
-"%(street_name)s"
+"Take roundabout clockwise to %(ordinal_exit_number)s exit on %(street_name)s"
 msgstr ""
 "Влезте в кръговото по часовниковата стрелка и излезте от "
 "%(ordinal_exit_number)s изход по %(street_name)s"
@@ -1034,7 +1061,7 @@ msgstr "(Не са избрани спирки)"
 #. sequential trips made using the same vehicle, where a passenger
 #. can transfer from one trip to the next just by staying in the
 #. vehicle.)
-#: src/client/js/otp/widgets/transit/StopViewerWidget.js:128
+#: src/client/js/otp/widgets/transit/StopViewerWidget.js:130
 msgid "Block"
 msgstr "Блок"
 
@@ -1042,7 +1069,7 @@ msgstr "Блок"
 #. Trip viewer
 #: src/client/js/otp/widgets/transit/TripViewerWidget.js:114
 msgid "Recenter"
-msgstr "Покажи в центъра на картата"
+msgstr "Центрирай"
 
 #. Link to Stop viewer (Shown at each stop in Trip
 #. viewer)
@@ -1235,10 +1262,3 @@ msgstr "Намери маршрут"
 
 #~ msgid "Bike and Ride"
 #~ msgstr "Bike and Ride"
-
-#~ msgid "First"
-#~ msgstr "Първи"
-
-#~ msgid "Last"
-#~ msgstr "Последен"
-
