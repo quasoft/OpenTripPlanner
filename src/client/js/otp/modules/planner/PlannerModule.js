@@ -1,4 +1,4 @@
-/* This program is free software: you can redistribute it and/or
+﻿/* This program is free software: you can redistribute it and/or
    modify it under the terms of the GNU Lesser General Public License
    as published by the Free Software Foundation, either version 3 of
    the License, or (at your option) any later version.
@@ -463,6 +463,64 @@ otp.modules.planner.PlannerModule =
         otp.widgets.Dialogs.showOkDialog(msg, _tr('No Trip Found'));
     },
 
+    drawStop: function(stop, leg) {
+      var this_ = this;
+      stop.lat = stop.lat || stop.stopLat;
+      stop.lon = stop.lon || stop.stopLon;
+      stop.id = stop.id || stop.stopId;
+
+      var latLng = L.latLng(stop.lat, stop.lon);
+      var circle = L.circleMarker(latLng);
+      if (leg.routeColor) {
+        routeColor = '#' + leg.routeColor;
+      }
+      else {
+        routeColor = this.getModeColor(leg.mode);
+      }
+      circle.setStyle({
+        color : routeColor,
+        weight: 4,
+        opacity: 1,
+        fill: true,
+        fillColor: '#fff',
+        fillOpacity: 1
+      });
+      circle.setRadius(5);
+      circle._stopId = stop.id;
+
+      var context = _.clone(stop);
+      context.nameLng = _tr('Stop');
+      context.agencyStopLinkText = otp.config.agencyStopLinkText || "Agency Stop URL";
+      context.stop_viewer = this.stop_viewer_trans;
+      context.routes_on_stop = this.routes_stop_trans;
+      context.plan_trip = this.plan_trip_trans;
+      context.from_stop = this.from_stop_trans;
+      context.to_stop = this.to_stop_trans;
+      var popupContent = ich['otp-stopsLayer-popup-route-stops'](context);
+      popupContent.find('.stopViewerLink').data('stop', stop).click(function() {
+          var thisStop = $(this).data('stop');
+          this_.stopViewerWidget.show();
+          this_.stopViewerWidget.setActiveTime(moment().add("hours", -otp.config.timeOffset).unix()*1000);
+          this_.stopViewerWidget.setStop(thisStop.id, thisStop.name);
+          this_.stopViewerWidget.bringToFront();
+      });
+
+      popupContent.find('.planFromLink').data('stop', stop).click(function() {
+          var thisStop = $(this).data('stop');
+          this_.setStartPoint(new L.LatLng(thisStop.lat, thisStop.lon), false, thisStop.stopName);
+          this_.webapp.map.lmap.closePopup();
+      });
+
+      popupContent.find('.planToLink').data('stop', stop).click(function() {
+          var thisStop = $(this).data('stop');
+          this_.setEndPoint(new L.LatLng(thisStop.lat, thisStop.lon), false, thisStop.stopName);
+          this_.webapp.map.lmap.closePopup();
+      });
+      circle.bindPopup(popupContent.get(0));
+
+      this.pathLayer.addLayer(circle);
+    },
+
     drawItinerary : function(itin) {
         var this_ = this;
 
@@ -478,7 +536,6 @@ otp.modules.planner.PlannerModule =
             // draw the polyline
             var polyline = new L.Polyline(otp.util.Geo.decodePolyline(leg.legGeometry.points));
             var weight = 8;
-            var color = '';
             if (leg.routeColor) {
               routeColor = '#' + leg.routeColor;
             }
@@ -552,8 +609,33 @@ otp.modules.planner.PlannerModule =
                 }
             }
             //FIXME: CAR is missing
+
+            // Prepare for drawing of stops
+            this.stop_viewer_trans = _tr('Stop Viewer');
+            //TRANSLATORS: Plan Trip [From Stop| To Stop] Used in stoplayer popup
+            this.plan_trip_trans = _tr('Plan Trip');
+            //TRANSLATORS: Plan Trip [From Stop| To Stop] Used in stoplayer popup
+            this.from_stop_trans = _tr('From Stop');
+            //TRANSLATORS: Plan Trip [From Stop| To Stop] Used in stoplayer popup
+            this.to_stop_trans = _tr('To Stop');
+            this.routes_stop_trans = _tr('Routes Serving Stop');
+
+            // Draw intermediate stops
+            for(var k=0; k < leg.intermediateStops.length; k++) {
+              var stop = leg.intermediateStops[k];
+              this.drawStop(stop, leg);
+            }
+
+            // Draw first and last stop
+            if (leg.from.vertexType == 'TRANSIT') {
+              this.drawStop(leg.from, leg);
+            }
+
+            if (leg.to.vertexType == 'TRANSIT') {
+              this.drawStop(leg.to, leg);
+            }
         }
-        if (otp.config.zoomToFitResults) this.webapp.map.lmap.fitBounds(itin.getBoundsArray());
+        if (otp.config.zoomToFitResults)    this.webapp.map.lmap.fitBounds(itin.getBoundsArray());
     },
 
     highlightLeg : function(leg) {
@@ -570,14 +652,25 @@ otp.modules.planner.PlannerModule =
     drawStartBubble : function(leg, highlight) {
         var quadrant = (leg.from.lat < leg.to.lat ? 's' : 'n')+(leg.from.lon < leg.to.lon ? 'w' : 'e');
         var modeIcon = this.icons.getModeBubble(quadrant, leg.startTime, leg.mode, true, highlight);
-        var marker = L.marker([leg.from.lat, leg.from.lon], {icon: modeIcon});
+        var tooltipInfo = {
+          routeName: leg.routeLongName.toLowerCase(),
+          stopName: leg.from.name
+        };
+        var tooltip = _tr('Board %(routeName)s at %(stopName)s', tooltipInfo);
+        var marker = L.marker([leg.from.lat, leg.from.lon], {icon: modeIcon, title: tooltip});
         this.pathMarkerLayer.addLayer(marker);
     },
 
     drawEndBubble : function(leg, highlight) {
         var quadrant = (leg.from.lat < leg.to.lat ? 'n' : 's')+(leg.from.lon < leg.to.lon ? 'e' : 'w');
         var modeIcon = this.icons.getModeBubble(quadrant, leg.endTime, leg.mode, false, highlight);
-        var marker = L.marker([leg.to.lat, leg.to.lon], {icon: modeIcon});
+        //TRANSLATORS: Tooltip for first/last marker
+        var tooltipInfo = {
+          routeName: leg.routeLongName.toLowerCase(),
+          stopName: leg.to.name
+        };
+        var tooltip = _tr('Board %(routeName)s at %(stopName)s', tooltipInfo);
+        var marker = L.marker([leg.to.lat, leg.to.lon], {icon: modeIcon, title: tooltip});
         this.pathMarkerLayer.addLayer(marker);
     },
 

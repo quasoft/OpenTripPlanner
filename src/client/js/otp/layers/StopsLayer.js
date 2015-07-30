@@ -29,7 +29,7 @@ otp.layers.StopsLayer =
 
     module : null,
 
-    minimumZoomForStops : 15,
+    minimumZoomForStops : 16,
 
     initialize : function(module) {
         var this_ = this;
@@ -42,11 +42,54 @@ otp.layers.StopsLayer =
         this.module.webapp.map.lmap.on('dragend zoomend', $.proxy(this.refresh, this));
         this.module.webapp.map.lmap.on('popupopen', function (e) {
             this_.module.webapp.indexApi.loadRoutesForStop(e.popup._source._stopId, this_, function(data) {
+                $('.routeList').empty();
                 _.each(data, function(route) {
                     ich['otp-stopsLayer-popupRoute'](route).appendTo($('.routeList'));
                 });
             });
         });
+    },
+
+    isFirstOrLastStop: function(thisStop) {
+      var widget = this.module.itinWidget;
+      if (widget.activeIndex < widget.itineraries.length) {
+        var itin = widget.itineraries[widget.activeIndex].itinData;
+        for(var i = 0; i < itin.legs.length; i++) {
+          var leg = itin.legs[i];
+
+          var stopId = '';
+          if (leg.from.vertexType == 'TRANSIT') {
+            stopId = leg.from.stopId;
+          }
+          else if (leg.to.vertexType == 'TRANSIT') {
+            stopId = leg.to.stopId;
+          }
+
+          if (stopId == thisStop.id)
+          {
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+
+    isIntermediateStop: function(thisStop) {
+      var widget = this.module.itinWidget;
+      if (widget.activeIndex < widget.itineraries.length) {
+        var itin = widget.itineraries[widget.activeIndex].itinData;
+        for(var i = 0; i < itin.legs.length; i++) {
+          var leg = itin.legs[i];
+          for(var k = 0; k < leg.intermediateStops.length; k++) {
+            var stop = leg.intermediateStops[k];
+            if (stop.stopId == thisStop.id)
+            {
+              return true;
+            }
+          }
+        }
+      }
+      return false;
     },
 
     refresh : function() {
@@ -56,6 +99,13 @@ otp.layers.StopsLayer =
             this.module.webapp.indexApi.loadStopsInRectangle(null, lmap.getBounds(), this, function(data) {
                 this.stopsLookup = {};
                 for(var i = 0; i < data.length; i++) {
+                    // Do not draw intermateStops in this layer, as they
+                    // are considered part of the route and should be handled
+                    // by the PlannerModule
+                    if (this.isFirstOrLastStop(data[i]) || this.isIntermediateStop(data[i])) {
+                      continue;
+                    }
+
                     var agencyAndId = data[i].id;
                     this.stopsLookup[agencyAndId] = data[i];
                 }
@@ -132,6 +182,7 @@ otp.layers.StopsLayer =
             */
             m = L.marker([stop.lat, stop.lon], {
                 icon : icon,
+                title: stop.stopName
             });
             m._stopId = stop.id;
             m.addTo(this)
