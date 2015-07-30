@@ -1,4 +1,4 @@
-otp.config = {
+﻿otp.config = {
     //If enabled it shows popup window with all planner responses in JSON
     //Can be also enabled in URL parameters as ?debug=true
     debug: false,
@@ -70,13 +70,19 @@ otp.config = {
 
     baseLayers: [
         {
+            name: 'Стандартна карта',
+            tileUrl: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            subdomains : ['a','b','c'],
+            attribution : 'Картографски данни от <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> и сътрудници.'
+        },
+        {
             name: 'Транспортна карта',
             tileUrl: 'http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
             subdomains : ['a','b','c'],
             attribution: 'Data from <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors. Tiles from <a href="http://www.thunderforest.com/transport/">Andy Allan</a>'
         },
         {
-            name: 'Стандартна карта',
+            name: 'MapQuest OSM',
             tileUrl: 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
             subdomains : ['otile1','otile2','otile3','otile4'],
             attribution : 'Картографските данни са предоставени от <a href="http://open.mapquest.com" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> и доброволни сътрудници.'
@@ -101,8 +107,8 @@ otp.config = {
      * properties, when set, override that behavioir.
      */
 
-    // initLatLng : new L.LatLng(<lat>, <lng>),
-    // initZoom : 14,
+    initLatLng : new L.LatLng(43.07844, 25.61297),
+    initZoom : 14,
     // minZoom : 10,
     // maxZoom : 20,
 
