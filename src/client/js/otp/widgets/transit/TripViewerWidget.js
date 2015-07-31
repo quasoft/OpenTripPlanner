@@ -119,6 +119,7 @@ otp.widgets.transit.TripViewerWidget =
             });
             //TRANSLATORS: Link to Stop viewer (Shown at each stop in Trip
             //viewer)
+            /*
             $('<span>&nbsp;[<a href="#">' + _tr('Viewer') + '</a>]</span>').appendTo(idLine)
             .data("stop", stop)
             .click(function(evt) {
@@ -132,6 +133,7 @@ otp.widgets.transit.TripViewerWidget =
                 this_.module.stopViewerWidget.setStop(stop.id, stop.name);
                 this_.module.stopViewerWidget.bringToFront();
             });
+            */
 
             // highlight the boarded stops
             if(this.activeLeg && i >= this.activeLeg.from.stopIndex && i <= this.activeLeg.to.stopIndex) {
