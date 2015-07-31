@@ -428,10 +428,23 @@ public class TripPattern implements Serializable {
             }
             PATTERN : for (TripPattern pattern : routeTripPatterns) {
                 List<Stop> stops = pattern.getStops();
-                StringBuilder sb = new StringBuilder(routeName);
+                StringBuilder sb = new StringBuilder("");
 
                 /* First try to name with destination. */
                 Stop end = stops.get(stops.size() - 1);
+                sb.append("към " + end.getName());
+                if (true) {
+                    pattern.name = sb.toString();
+                    continue PATTERN; // only pattern with this last stop
+                }
+
+                if (ends.get(end).size() == 1) {
+                    pattern.name = sb.toString();
+                    continue PATTERN; // only pattern with this last stop
+                }
+
+                /* First try to name with destination. */
+                end = stops.get(stops.size() - 1);
                 sb.append(" to " + stopNameAndId(end));
                 if (ends.get(end).size() == 1) {
                     pattern.name = sb.toString();
@@ -571,14 +584,14 @@ public class TripPattern implements Serializable {
         }
         scheduledTimetable.setServiceCodes (serviceCodes);
     }
-    
+
     /**
      * @return bitset of service codes
      */
     public BitSet getServices() {
         return services;
     }
-    
+
     /**
      * @param services bitset of service codes
      */
