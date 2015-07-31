@@ -498,7 +498,7 @@ otp.widgets.ItinerariesWidget =
         var tripSummaryFooter = $('<div class="otp-itinTripSummaryFooter" />');
 
         //TRANSLATORS: Valid date time; When is this trip correct
-        tripSummaryFooter.append(_tr('Valid') + ' ' + moment().format(otp.config.locale.time.format));
+        //tripSummaryFooter.append(_tr('Valid') + ' ' + moment().format(otp.config.locale.time.format));
 
         var itinLink = this.constructLink(itin.tripPlan.queryParams, { itinIndex : index });
         if(this.showItineraryLink) {
@@ -547,7 +547,7 @@ otp.widgets.ItinerariesWidget =
             }
 
             //TRANSLATORS: Depart station / Board at station in itinerary
-            var startHtml = '<div class="otp-itin-leg-endpointDesc">' + (leg.interlineWithPreviousLeg ? "<b>" + pgettext("itinerary", "Depart") + "</b> " : _tr("<b>Board</b> at ")) +leg.from.name;
+            var startHtml = '<div class="otp-itin-leg-endpointDesc">' + (leg.interlineWithPreviousLeg ? "<b>" + pgettext("itinerary", "Depart") + "</b> " : _tr("<b>Board</b> at ")) + "'" + leg.from.name + "'";
             if(otp.config.municoderHostname) {
                 var spanId = this.newMunicoderRequest(leg.from.lat, leg.from.lon);
                 startHtml += '<span id="'+spanId+'"></span>';
@@ -595,7 +595,7 @@ otp.widgets.ItinerariesWidget =
 
             $('<span><i>' + _tr("Time in transit") + ": " + otp.util.Time.secsToHrMin(leg.duration)+'</i></span>').appendTo(inTransitDiv);
 
-            $('<span>&nbsp;[<a href="#">' + _tr("Trip Viewer") + '</a>]</span>')
+            $('<br><span>&nbsp;[<a href="#">' + _tr("Trip Viewer") + '</a>]</span>')
             .appendTo(inTransitDiv)
             .click(function(evt) {
                 if(!this_.module.tripViewerWidget) {
@@ -661,7 +661,7 @@ otp.widgets.ItinerariesWidget =
             //TRANSLATORS: Stay on board/Alight [at stop name]
             var endAction = (nextLeg && nextLeg.interlineWithPreviousLeg) ? _tr("Stay on board") : _tr("Alight");
             //TRANSLATORS: [Stay on board/Alight] at [stop name]
-            var endHtml = '<div class="otp-itin-leg-endpointDesc"><b>' + endAction + '</b> ' + _tr('at')+ ' ' +leg.to.name;
+            var endHtml = '<div class="otp-itin-leg-endpointDesc"><b>' + endAction + '</b> ' + _tr('at')+ ' ' + "'" + leg.to.name + "'";
             if(otp.config.municoderHostname) {
                 spanId = this.newMunicoderRequest(leg.to.lat, leg.to.lon);
                 endHtml += '<span id="'+spanId+'"></span>';
@@ -753,6 +753,8 @@ otp.widgets.ItinerariesWidget =
 
     constructLink : function(queryParams, additionalParams) {
         additionalParams = additionalParams ||  { };
+        if (additionalParams.bannedRoutes)
+          delete additionalParams.bannedRoutes;
         return otp.config.siteUrl + '?module=' + this.module.id + "&" +
             otp.util.Text.constructUrlParamString(_.extend(_.clone(queryParams), additionalParams));
     },
