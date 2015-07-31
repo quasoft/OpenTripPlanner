@@ -125,7 +125,7 @@ input:invalid, textarea:invalid {
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink. */
 ::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#007CC3; color:#fff; text-shadow: none; }
 /*  j.mp/webkit-tap-highlight-color */
 a:link { -webkit-tap-highlight-color: #FF5E99; }
 /* make buttons play nice in IE:
@@ -1138,11 +1138,63 @@ p#splash-text span {
 @media only screen and (min-width: 1300px) { body:after { content: "1300 and up"; background-color: hsla(60,60%,40%,0.7); } }*/
 
 div.about {
-  background-color: #fff;
+  background-color: #eee;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 20px;
 }
 
+div.about h2,
+div.about h3,
+div.about h4,
+div.about h5
+{
+  text-shadow: none;
+}
+
+div.about h2 {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+div.about h5 {
+  margin: 10px 0;
+}
+
+div.about p,
+div.about li {
+  font-size: 16px;
+}
+
 div.about p {
-  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
   text-align: justify;
+}
+
+div.about li {
+  list-style-type: square;
+}
+
+.polaroid {
+  position: relative;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.polaroid img {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  left: 10px;
+  font-size: 16px;
+  color: #000;
 }
