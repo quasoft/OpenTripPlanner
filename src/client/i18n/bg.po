@@ -8,17 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenTripPlanner VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-07-31 11:35+0300\n"
+"POT-Creation-Date: 2015-07-31 14:37+0300\n"
 "PO-Revision-Date: 2015-07-31 14:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: QuaSoft <info@quasoft.net>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
-"Language: bg\n"
-"X-Generator: Poedit 1.8.3\n"
 
 #. Travel by: mode of transport (Used in selection in Travel
 #. Options widgets)
@@ -493,45 +491,45 @@ msgstr ""
 #: src/client/js/otp/modules/planner/PlannerModule.js:98
 #: src/client/js/otp/modules/planner/PlannerModule.js:99
 msgid ""
-"We're sorry. The trip planner is temporarily unavailable. Please try again "
-"later."
+"We're sorry. The trip planner is temporarily unavailable. Please try "
+"again later."
 msgstr ""
-"Не може да бъде намерен маршрут.  Времето на заминаване или пристигане е извън "
-"работното време на превозвачите или началната/крайната точка е извън границите "
-"на града."
+"Не може да бъде намерен маршрут.  Времето на заминаване или пристигане е "
+"извън работното време на превозвачите или началната/крайната точка е "
+"извън границите на града."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:100
 msgid ""
-"Trip is not possible.  You might be trying to plan a trip outside the map data "
-"boundary."
+"Trip is not possible.  You might be trying to plan a trip outside the map"
+" data boundary."
 msgstr ""
-"Не може да бъде намерен маршрут. Вероятно сте избрали начална или крайна точка "
-"извън границите на града или в район без улици."
+"Не може да бъде намерен маршрут. Вероятно сте избрали начална или крайна "
+"точка извън границите на града или в район без улици."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:101
 msgid ""
-"Trip is not possible.  Your start or end point might not be safely accessible "
-"(for instance), you might be starting on a residential street connected only "
-"to a highway)."
+"Trip is not possible.  Your start or end point might not be safely "
+"accessible (for instance), you might be starting on a residential street "
+"connected only to a highway)."
 msgstr ""
-"Не може да бъде намерен маршрут. Преместете началната или крайната точка по-"
-"близо до улица или пешеходна пътека."
+"Не може да бъде намерен маршрут. Преместете началната или крайната точка "
+"по-близо до улица или пешеходна пътека."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:102
 msgid ""
-"No transit times available. The date may be past or too far in the future or "
-"there may not be transit service for your trip at the time you chose."
+"No transit times available. The date may be past or too far in the future"
+" or there may not be transit service for your trip at the time you chose."
 msgstr ""
-"Не може да бъде намерен маршрут. Вероятно зададеното време за заминаване или "
-"пристигане е извън работното време на превозвачите."
+"Не може да бъде намерен маршрут. Вероятно зададеното време за заминаване "
+"или пристигане е извън работното време на превозвачите."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:103
 msgid ""
-"The trip planner is taking way too long to process your request. Please try "
-"again later."
+"The trip planner is taking way too long to process your request. Please "
+"try again later."
 msgstr ""
-"Прекратяване на търсенето на маршрут поради изтекло време. Опитайте отново по-"
-"късно."
+"Прекратяване на търсенето на маршрут поради изтекло време. Опитайте "
+"отново по-късно."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:104
 msgid "The request has errors that the server is not willing or able to process."
@@ -540,19 +538,22 @@ msgstr "Заявката съдържа данни, които не могат �
 #: src/client/js/otp/modules/planner/PlannerModule.js:105
 msgid "Origin is unknown. Can you be a bit more descriptive?"
 msgstr ""
-"Не може да бъде открито местоположението на началната точка по въведения текст."
+"Не може да бъде открито местоположението на началната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:106
 msgid "Destination is unknown.  Can you be a bit more descriptive?"
 msgstr ""
-"Не може да бъде открито местоположението на крайната точка по въведения текст."
+"Не може да бъде открито местоположението на крайната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:107
 msgid ""
-"Both origin and destination are unknown. Can you be a bit more descriptive?"
+"Both origin and destination are unknown. Can you be a bit more "
+"descriptive?"
 msgstr ""
-"Не може да бъде открито местоположението на началната и крайната точка по "
-"въведения текст."
+"Не може да бъде открито местоположението на началната и крайната точка по"
+" въведения текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:108
 msgid "Both origin and destination are not wheelchair accessible"
@@ -564,33 +565,35 @@ msgstr "Крайната точка е твърде близо до началн
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:111
 msgid ""
-"The trip planner is unsure of the location you want to start from. Please "
-"select from the following options, or be more specific."
+"The trip planner is unsure of the location you want to start from. Please"
+" select from the following options, or be more specific."
 msgstr ""
-"Не може да бъде открито местоположението на началната точка по въведения текст."
+"Не може да бъде открито местоположението на началната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:112
 msgid ""
-"The trip planner is unsure of the destination you want to go to. Please select "
-"from the following options, or be more specific."
+"The trip planner is unsure of the destination you want to go to. Please "
+"select from the following options, or be more specific."
 msgstr ""
-"Не може да бъде открито местоположението на крайната точка по въведения текст."
+"Не може да бъде открито местоположението на крайната точка по въведения "
+"текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:113
 msgid ""
-"Both origin and destination are ambiguous. Please select from the following "
-"options, or be more specific."
+"Both origin and destination are ambiguous. Please select from the "
+"following options, or be more specific."
 msgstr ""
-"Не може да бъде открито местоположението на началната и крайната точка по "
-"въведения текст."
+"Не може да бъде открито местоположението на началната и крайната точка по"
+" въведения текст."
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:115
 msgid ""
-"All of triangleSafetyFactor, triangleSlopeFactor, and triangleTimeFactor must "
-"be set if any are"
+"All of triangleSafetyFactor, triangleSlopeFactor, and triangleTimeFactor "
+"must be set if any are"
 msgstr ""
-"All of triangleSafetyFactor, triangleSlopeFactor, and triangleTimeFactor must "
-"be set if any are"
+"All of triangleSafetyFactor, triangleSlopeFactor, and triangleTimeFactor "
+"must be set if any are"
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:116
 msgid ""
@@ -610,11 +613,11 @@ msgstr ""
 
 #: src/client/js/otp/modules/planner/PlannerModule.js:118
 msgid ""
-"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, and "
-"triangleTimeFactor must be set"
+"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, "
+"and triangleTimeFactor must be set"
 msgstr ""
-"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, and "
-"triangleTimeFactor must be set"
+"If OptimizeType is TRIANGLE, triangleSafetyFactor, triangleSlopeFactor, "
+"and triangleTimeFactor must be set"
 
 #. Context menu
 #: src/client/js/otp/modules/planner/PlannerModule.js:194
@@ -841,11 +844,11 @@ msgstr "Станция за наемане на велосипеди"
 #: src/client/js/otp/util/Itin.js:252
 #, python-format
 msgid ""
-"Take roundabout <b>counterclockwise</b> to <b>%(ordinal_exit_number)s</b> exit "
-"on <b>%(street_name)s</b>"
+"Take roundabout <b>counterclockwise</b> to <b>%(ordinal_exit_number)s</b>"
+" exit on <b>%(street_name)s</b>"
 msgstr ""
-"Влезте в кръговото и излезте от <b>%(ordinal_exit_number)s</b> изход по <b>"
-"%(street_name)s</b>"
+"Влезте в кръговото и излезте от <b>%(ordinal_exit_number)s</b> изход по "
+"<b>%(street_name)s</b>"
 
 #: src/client/js/otp/util/Itin.js:254
 #, python-format
@@ -859,16 +862,17 @@ msgstr ""
 #: src/client/js/otp/util/Itin.js:258
 #, python-format
 msgid ""
-"Take roundabout <b>clockwise</b> to <b>%(ordinal_exit_number)s</b> exit on <b>"
-"%(street_name)s</b>"
+"Take roundabout <b>clockwise</b> to <b>%(ordinal_exit_number)s</b> exit "
+"on <b>%(street_name)s</b>"
 msgstr ""
-"Влезте в кръговото по часовниковата стрелка и излезте от <b>"
-"%(ordinal_exit_number)s</b> изход по <b>%(street_name)s</b>"
+"Влезте в кръговото по часовниковата стрелка и излезте от "
+"<b>%(ordinal_exit_number)s</b> изход по <b>%(street_name)s</b>"
 
 #: src/client/js/otp/util/Itin.js:260
 #, python-format
 msgid ""
-"Take roundabout clockwise to %(ordinal_exit_number)s exit on %(street_name)s"
+"Take roundabout clockwise to %(ordinal_exit_number)s exit on "
+"%(street_name)s"
 msgstr ""
 "Влезте в кръговото по часовниковата стрелка и излезте от "
 "%(ordinal_exit_number)s изход по %(street_name)s"
@@ -1255,3 +1259,4 @@ msgstr "Намери маршрут"
 
 #~ msgid "Viewer"
 #~ msgstr "Разписание на спирката"
+
