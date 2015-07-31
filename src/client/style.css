@@ -1136,3 +1136,13 @@ p#splash-text span {
 @media only screen and (min-width: 768px) { body:after { content: "768 to 1023px"; background-color: hsla(270,60%,40%,0.7); } }
 @media only screen and (min-width: 1024px) { body:after { content: "1024 to 1299px"; background-color: hsla(360,60%,40%,0.7); } }
 @media only screen and (min-width: 1300px) { body:after { content: "1300 and up"; background-color: hsla(60,60%,40%,0.7); } }*/
+
+div.about {
+  background-color: #fff;
+  padding: 20px;
+}
+
+div.about p {
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  text-align: justify;
+}

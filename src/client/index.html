@@ -17,10 +17,10 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/leaflet/0.7.3/leaflet.css" />
 <link rel="stylesheet" href="js/otp/widgets/widget-style.css?v=1" />
 <link rel="stylesheet" href="js/otp/modules/planner/planner-style.css?v=1" />
-<link rel="stylesheet" href="js/otp/modules/bikeshare/bikeshare-style.css?v=1" />
+<!--<link rel="stylesheet" href="js/otp/modules/bikeshare/bikeshare-style.css?v=1" />-->
 <link rel="stylesheet" href="js/otp/modules/multimodal/multimodal-style.css?v=1" />
-<link rel="stylesheet" href="js/otp/modules/calltaker/calltaker-style.css?v=1" />
-<link rel="stylesheet" href="js/otp/modules/analyst/analyst-style.css?v=1" />
+<!--<link rel="stylesheet" href="js/otp/modules/calltaker/calltaker-style.css?v=1" />-->
+<!--<link rel="stylesheet" href="js/otp/modules/analyst/analyst-style.css?v=1" />-->
 <link rel="stylesheet" href="js/otp/modules/alerts/alerts-style.css?v=1" />
 <link rel="stylesheet" href="js/otp/modules/alerts/alerts-style.css?v=1" />
 <link rel="stylesheet" href="js/otp/modules/fieldtrip/fieldtrip-style.css?v=1" />
@@ -61,11 +61,13 @@
 <script language="javascript" src="js/lib/i18next-1.7.3.min.js"></script>
 <script src="js/otp/locale/Bulgarian.js?v=1"></script>
 <script src="js/otp/locale/English.js?v=1"></script>
+<!--
 <script src="js/otp/locale/French.js?v=1"></script>
 <script src="js/otp/locale/German.js?v=1"></script>
 <script src="js/otp/locale/Slovenian.js?v=1"></script>
 <script src="js/otp/locale/Italian.js?v=1"></script>
 <script src="js/otp/locale/Catalan.js?v=1"></script>
+-->
 
 <script src="js/otp/config.js?v=1"></script>
 
@@ -113,16 +115,16 @@
 <script type="text/javascript">
 	//Which modules needs which files
 	var modules = {
-		'otp.modules.bikeshare.BikeShareModule':
+		/*'otp.modules.bikeshare.BikeShareModule':
 			[
 			'js/otp/modules/bikeshare/BikeShareModule.js?v=1',
 			'js/otp/modules/bikeshare/BikeStationsWidget.js?v=1'
 		],
-		/*'otp.modules.analyst.AnalystModule':
+		'otp.modules.analyst.AnalystModule':
 			[
 			'js/otp/modules/analyst/AnalystModule.js?v=1',
 			'js/otp/modules/analyst/AnalystLegendWidget.js?v=1',
-		],*/
+		],
 		'otp.modules.calltaker.CallTakerModule':
 			[
 			'js/lib/jspdf.min.js',
@@ -134,7 +136,7 @@
 		'otp.modules.annotations.AnnotationsModule':
 			[
 			'js/otp/modules/annotations/AnnotationsModule.js?v=1'
-		],
+		],*/
 		'otp.modules.alerts.AlertsModule':
 			[
 			'js/otp/modules/alerts/AlertsModule.js?v=1',
@@ -181,7 +183,7 @@
 <script src="js/otp/widgets/InfoWidget.js?v=1"></script>
 <script src="js/otp/widgets/tripoptions/RoutesSelectorWidget.js?v=1"></script>
 <script src="js/otp/widgets/tripoptions/TripOptionsWidget.js?v=1"></script>
-<script src="js/otp/widgets/tripoptions/BikeTrianglePanel.js?v=1"></script>
+<!--<script src="js/otp/widgets/tripoptions/BikeTrianglePanel.js?v=1"></script>-->
 
 <script src="js/otp/widgets/transit/RouteBasedWidget.js?v=1"></script>
 <script src="js/otp/widgets/transit/StopViewerWidget.js?v=1"></script>
@@ -251,26 +253,12 @@ $(document).ready(function() {
     <input type="text" name="location_search" placeholder="Search for a location&hellip;" />
   </div>
  -->
+ <nav id="main-menu" role="article"><ul><li id="otp-infoWidget-0"><a href="/" style="    background-color: #333;">Търсене на маршрут</a></li><li id="otp-infoWidget-0"><a href="/about.html">За проекта</a></li></ul></nav>
 </header><!-- #branding -->
 
 <div id="map"></div>
 <div id="otp-minimize-tray"></div>
 
 <div id="otp-spinner"><img src="images/spinner.gif"></div>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-8102379-22']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
 </body>
 </html>
