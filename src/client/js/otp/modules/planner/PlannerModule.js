@@ -496,7 +496,7 @@ otp.modules.planner.PlannerModule =
       context.plan_trip = this.plan_trip_trans;
       context.from_stop = this.from_stop_trans;
       context.to_stop = this.to_stop_trans;
-      var popupContent = ich['otp-stopsLayer-popup-route-stops'](context);
+      var popupContent = ich['otp-stopsLayer-popup'](context);
       popupContent.find('.stopViewerLink').data('stop', stop).click(function() {
           var thisStop = $(this).data('stop');
           this_.stopViewerWidget.show();
