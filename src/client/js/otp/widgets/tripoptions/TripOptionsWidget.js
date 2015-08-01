@@ -366,7 +366,7 @@ otp.widgets.tripoptions.TimeSelector =
 
         $("#"+this.id+'-nowButton').click(function() {
             $('#'+this_.id+'-date').datepicker("setDate", new Date());
-            $('#'+this_.id+'-time').val(moment().format(otp.config.locale.time.time_format))
+            $('#'+this_.id+'-time').val(moment().format(otp.config.locale.time.time_format));
             this_.tripWidget.inputChanged({
                 time : $('#'+this_.id+'-time').val(),
                 date : $('#'+this_.id+'-date').val()

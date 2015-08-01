@@ -2,7 +2,7 @@
 /* Written by Milian Wolff (mail@milianw.de). */
 jQuery(function($){
 	$.datepicker.regional['bg'] = {
-		closeText: 'Close',
+		closeText: 'Затвори',
 		prevText: '&#x3C;назад',
 		nextText: 'напред&#x3E;',
 		currentText: 'днес',
