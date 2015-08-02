@@ -31,3 +31,8 @@ _site/
 /.venv
 /node_modules
 /lucene
+/UPDATE.bat
+/COMPILE.bat
+/DEBUG.bat
+/START.bat
+/BUILD GRAPH.bat
