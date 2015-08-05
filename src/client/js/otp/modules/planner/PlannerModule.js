@@ -17,7 +17,7 @@ otp.namespace("otp.modules.planner");
 otp.modules.planner.defaultQueryParams = {
     startPlace                      : null,
     endPlace                        : null,
-    time                            : moment().format(otp.config.locale.time.time_format),
+    time                            : moment(otp.config.custom.startTime, "HH:mm").format(otp.config.locale.time.time_format),
     date                            : moment().format(otp.config.locale.time.date_format),
     arriveBy                        : false,
     wheelchair                      : false,
@@ -329,7 +329,7 @@ otp.modules.planner.PlannerModule =
        	    queryParams = {
                 fromPlace: this.getStartOTPString(),
                 toPlace: this.getEndOTPString(),
-                time : (this.time) ? otp.util.Time.correctAmPmTimeString(this.time) : moment().format("h:mma"),
+                time : (this.time) ? otp.util.Time.correctAmPmTimeString(this.time) :  moment(otp.config.custom.startTime, "HH:mm").format(otp.config.locale.time.time_format),
                 //time : (this.time) ? moment(this.time).add("s", addToStart).format("h:mma") : moment().add("s", addToStart).format("h:mma"),
                 date : (this.date) ? moment(this.date, otp.config.locale.time.date_format).format("MM-DD-YYYY") : moment().format("MM-DD-YYYY"),
                 mode: this.mode,

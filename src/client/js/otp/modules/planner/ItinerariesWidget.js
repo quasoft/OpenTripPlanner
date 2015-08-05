@@ -42,7 +42,7 @@ otp.widgets.ItinerariesWidget =
             title : _tr("Itineraries"),
             cssClass : module.itinerariesWidgetCssClass || 'otp-defaultItinsWidget',
             resizable : true,
-            closeable : true,
+            closeable : false,
             persistOnClose : true
         });
         //this.$().addClass('otp-itinsWidget');

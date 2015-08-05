@@ -86,7 +86,8 @@
             tileUrl: 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
             subdomains : ['otile1','otile2','otile3','otile4'],
             attribution : 'Картографските данни са предоставени от <a href="http://open.mapquest.com" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> и доброволни сътрудници.'
-        }/*,
+        }
+        /*,
         {
             name: 'Сателитни снимки MapQuest Aerial',
             tileUrl: 'http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png',
@@ -108,12 +109,18 @@
      */
 
     initLatLng : new L.LatLng(43.07844, 25.61297),
-    initZoom : 14,
+    initZoom : 15,
     // minZoom : 10,
     // maxZoom : 20,
 
     /* Whether the map should be moved to contain the full itinerary when a result is received. */
     zoomToFitResults    : false,
+
+    custom : {
+      startLatLng: new L.LatLng(43.07403, 25.61282),
+      endLatLng: new L.LatLng(43.08237, 25.63188),
+      startTime: '08:20'
+    },
 
     /**
      * Site name / description / branding display options
@@ -172,7 +179,12 @@
     geocoders : [
         {
             name: 'OTP built-in geocoder',
-            className: 'otp.core.GeocoderBuiltin'
+            className: 'otp.core.GeocoderGoogle',
+            //url: '/otp/routers/default/geocode',
+            url: 'http://maps.google.com/maps/api/geocode/json',
+            //url: 'https://maps.googleapis.com/maps/api/geocode/json',
+            addressParam: 'address'
+            // /otp/routers/default/geocode?query
             // URL and query parameter do not need to be set for built-in geocoder.
         }
     ],

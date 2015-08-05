@@ -1137,6 +1137,10 @@ p#splash-text span {
 @media only screen and (min-width: 1024px) { body:after { content: "1024 to 1299px"; background-color: hsla(360,60%,40%,0.7); } }
 @media only screen and (min-width: 1300px) { body:after { content: "1300 and up"; background-color: hsla(60,60%,40%,0.7); } }*/
 
+nav a.selected {
+  background-color: #333;
+}
+
 div.about {
   background-color: #eee;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;

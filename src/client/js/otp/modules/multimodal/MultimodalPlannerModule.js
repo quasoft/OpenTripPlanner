@@ -131,7 +131,14 @@ otp.modules.multimodal.MultimodalPlannerModule =
             //TRANSLATORS: Widget title
             this.itinWidget.setTitle(_tr("Itineraries"));
         }
- },
+    },
+
+    autoLoadTrip : function(start, end) {
+        //otp.modules.planner.PlannerModule.prototype.setStartPoint(start, false);
+        //otp.modules.planner.PlannerModule.prototype.setStartPoint(end, true);
+        this.setStartPoint(start, false);
+        this.setEndPoint(end, true);
+    },
 
     CLASS_NAME : "otp.modules.multimodal.MultimodalPlannerModule"
 });

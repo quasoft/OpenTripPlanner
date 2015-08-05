@@ -27,7 +27,8 @@ otp.widgets.tripoptions.TripOptionsWidget =
 
     initialize : function(id, module, options) {
 
-        options = options || {};
+        options = options || { };
+        options["closeable"] = false;
         //TRANSLATORS: Widget title
         if(!_.has(options, 'title')) options['title'] = _tr("Travel Options");
         if(!_.has(options, 'cssClass')) options['cssClass'] = 'otp-defaultTripWidget';
