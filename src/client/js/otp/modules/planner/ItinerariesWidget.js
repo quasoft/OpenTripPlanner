@@ -295,14 +295,14 @@ otp.widgets.ItinerariesWidget =
 
             //div.append('<div class="otp-itinsAccord-header-segment" style="width: '+widthPx+'px; left: '+leftPx+'px; background: '+this.getModeColor(leg.mode)+' url(images/mode/'+leg.mode.toLowerCase()+'.png) center no-repeat;"></div>');
 
-            var showRouteLabel = widthPx > 20 && otp.util.Itin.isTransit(leg.mode) && leg.routeShortName && leg.routeShortName.length <= 6;
+            var showRouteLabel = widthPx > 35 && otp.util.Itin.isTransit(leg.mode) && leg.routeShortName && leg.routeShortName.length <= 6;
             if (leg.routeColor) {
               routeColor = '#' + leg.routeColor;
             }
             else {
               routeColor = this.getModeColor(leg.mode);
             }
-            var segment = $('<div class="otp-itinsAccord-header-segment" />')
+            var segment = $('<div title="'+leg.routeLongName+'" class="otp-itinsAccord-header-segment" />')
             .css({
                 width: widthPx,
                 left: leftPx,
