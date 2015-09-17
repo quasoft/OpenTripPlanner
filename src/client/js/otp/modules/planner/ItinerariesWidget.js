@@ -30,7 +30,7 @@ otp.widgets.ItinerariesWidget =
     showButtonRow : false,
     showItineraryLink : true,
     showPrintLink : true,
-    showEmailLink : true,
+    showEmailLink : false,
     showSearchLink : false,
 
 
@@ -753,8 +753,10 @@ otp.widgets.ItinerariesWidget =
 
     constructLink : function(queryParams, additionalParams) {
         additionalParams = additionalParams ||  { };
-        if (additionalParams.bannedRoutes)
-          delete additionalParams.bannedRoutes;
+        //if (additionalParams["bannedRoutes"])
+        delete additionalParams["bannedRoutes"];
+        delete queryParams["bannedRoutes"];
+
         return otp.config.siteUrl + '?module=' + this.module.id + "&" +
             otp.util.Text.constructUrlParamString(_.extend(_.clone(queryParams), additionalParams));
     },
