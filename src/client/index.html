@@ -228,11 +228,8 @@ $(document).ready(function() {
             if(loadedTemplates == templateUrls.length) {
                 ich.grabTemplates();
                 var app = new otp.core.Webapp();
+								/*
 								window.setTimeout(function() {
-									console.log(app);
-  								console.log(app.activeModule);
-									console.log(otp.config.custom.startLatLng);
-									console.log(otp.config.custom.endLatLng);
   								if (otp.config.custom.startLatLng && otp.config.custom.endLatLng) {
   									app.activeModule.autoLoadTrip(
   										otp.config.custom.startLatLng,
@@ -240,6 +237,7 @@ $(document).ready(function() {
   									);
   								}
 								}, 500);
+								*/
 
 								/*
 								if (false)

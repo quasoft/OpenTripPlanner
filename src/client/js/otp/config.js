@@ -1,4 +1,5 @@
 ﻿otp.config = {
+    siteUrl: "http://spirka.info",
     //If enabled it shows popup window with all planner responses in JSON
     //Can be also enabled in URL parameters as ?debug=true
     debug: false,

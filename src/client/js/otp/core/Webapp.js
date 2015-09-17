@@ -389,7 +389,15 @@ otp.core.Webapp = otp.Class({
 
     activateModule : function(module) {
         module.activate();
-        if(_.has(this.urlParams, 'module') && this.urlParams.module == module.id) module.restore();
+        if(_.has(this.urlParams, 'module') && this.urlParams.module == module.id) {
+          module.restore();
+        }
+        else if ((module.id == "planner") && (otp.config.custom.startLatLng && otp.config.custom.endLatLng)) {
+          module.autoLoadTrip(
+            otp.config.custom.startLatLng,
+            otp.config.custom.endLatLng
+          );
+        }
         this.moduleSelected(module);
         module.activated = true;
     },

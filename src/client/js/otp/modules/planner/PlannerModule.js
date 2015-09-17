@@ -185,6 +185,9 @@ otp.modules.planner.PlannerModule =
         if("fromPlace" in this.webapp.urlParams && "toPlace" in this.webapp.urlParams) {
             if("itinIndex" in this.webapp.urlParams) this.restoredItinIndex = this.webapp.urlParams["itinIndex"];
             this.restoreTrip(_.omit(this.webapp.urlParams, ["module", "itinIndex"]));
+        } else if (otp.config.custom.startLatLng && otp.config.custom.endLatLng) {
+            this.setStartPoint(otp.config.custom.startLatLng, false);
+            this.setEndPoint(otp.config.custom.endLatLng, true);
         }
     },
 

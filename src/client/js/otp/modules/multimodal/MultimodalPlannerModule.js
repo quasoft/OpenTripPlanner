@@ -134,10 +134,14 @@ otp.modules.multimodal.MultimodalPlannerModule =
     },
 
     autoLoadTrip : function(start, end) {
-        //otp.modules.planner.PlannerModule.prototype.setStartPoint(start, false);
-        //otp.modules.planner.PlannerModule.prototype.setStartPoint(end, true);
         this.setStartPoint(start, false);
         this.setEndPoint(end, true);
+        //otp.modules.planner.PlannerModule.prototype.setStartPoint(start, false);
+        //otp.modules.planner.PlannerModule.prototype.setStartPoint(end, true);
+        //if (!("fromPlace" in this.webapp.urlParams && "toPlace" in this.webapp.urlParams)) {
+          //this.setStartPoint(start, false);
+          //this.setEndPoint(end, true);
+        //}
     },
 
     CLASS_NAME : "otp.modules.multimodal.MultimodalPlannerModule"
